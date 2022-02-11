@@ -1,6 +1,6 @@
 {
-  "name": "@remoter/file",
-  "description": "File managing made easy.",
+  "name": "@remotefull/file",
+  "description": "File managing on remote servers made easy.",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
