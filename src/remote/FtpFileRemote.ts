@@ -1,16 +1,16 @@
-import { BaseUploader } from "./BaseUploader";
+import { BaseFileRemote } from "./BaseFileRemote";
 import { Client as FtpClient, AccessOptions, FileInfo } from "basic-ftp";
 import { statSync } from "fs";
 import path from "path/posix";
 import { Writable } from "stream";
 import { Stat } from "../types";
 
-export class FtpUploader extends BaseUploader<FtpClient, FileInfo> {
+export class FtpFileRemote extends BaseFileRemote<FtpClient, FileInfo> {
   constructor(private options: AccessOptions, pathPrefix: string = "") {
     super(new FtpClient(), pathPrefix);
   }
 
-  public async connect(): Promise<BaseUploader> {
+  public async connect(): Promise<FtpFileRemote> {
     await this.client.access(this.options);
     return this;
   }

@@ -1,15 +1,15 @@
-import { BaseUploader } from "./BaseUploader";
+import { BaseFileRemote } from "./BaseFileRemote";
 import SftpClient, { ConnectOptions, FileStats } from "ssh2-sftp-client";
 import { statSync } from "fs";
 import path from "path/posix";
 import { Stat } from "../types";
 
-export class SftpUploader extends BaseUploader<SftpClient, FileStats> {
+export class SftpFileRemote extends BaseFileRemote<SftpClient, FileStats> {
   constructor(private options: ConnectOptions, pathPrefix: string = "") {
     super(new SftpClient(), pathPrefix);
   }
 
-  public async connect(): Promise<BaseUploader> {
+  public async connect(): Promise<SftpFileRemote> {
     await this.client.connect(this.options);
     return this;
   }

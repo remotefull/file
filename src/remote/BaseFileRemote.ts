@@ -1,7 +1,7 @@
 import posixPath from "path/posix";
 import { Stat } from "../types";
 
-export abstract class BaseUploader<TClient = any, TRawStat = any> {
+export abstract class BaseFileRemote<TClient = any, TRawStat = any> {
   protected constructor(
     protected client: TClient,
     private pathPrefix: string = ""
@@ -88,7 +88,7 @@ export abstract class BaseUploader<TClient = any, TRawStat = any> {
    * Establishes a new connection. Has to be called before other
    * function calls that use the remote.
    */
-  async connect(): Promise<BaseUploader> {
+  async connect(): Promise<BaseFileRemote> {
     return this._fni();
   }
 

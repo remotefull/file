@@ -1,3 +1,3 @@
-export * from "./uploaders/BaseUploader";
-export * from "./uploaders/SftpUploader";
-export * from "./uploaders/FtpUploader";
+export * from "./remote/BaseFileRemote";
+export * from "./remote/SftpFileRemote";
+export * from "./remote/FtpFileRemote";
