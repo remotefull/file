@@ -1,0 +1,16 @@
+{
+  "name": "@remoter/file",
+  "description": "File managing made easy.",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "@types/ssh2-sftp-client": "^7.0.0"
+  },
+  "dependencies": {
+    "basic-ftp": "^4.6.6",
+    "ssh2-sftp-client": "^7.2.2"
+  }
+}
